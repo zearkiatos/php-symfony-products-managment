@@ -12,4 +12,24 @@ services:
       - ".:/app"
     ports:
       - "8001:8000"
+    depends_on:
+      - db
+    networks: 
+      - api-product-network
     tty: true
+  db:
+    build:
+      context: .
+      dockerfile: mysql.Dockerfile
+    container_name: api-product-db
+    env_file:
+      - mysql.env
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./mysql_volume:/var/lib/mysql"
+    networks:
+      - api-product-network
+networks:
+  api-product-network:
+    driver: bridge

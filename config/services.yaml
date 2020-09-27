@@ -6,6 +6,9 @@
 parameters:
 
 services:
+    product.application.product_service:
+        class: src\Application\ProductApplicationService
+        arguments: ['@']
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
