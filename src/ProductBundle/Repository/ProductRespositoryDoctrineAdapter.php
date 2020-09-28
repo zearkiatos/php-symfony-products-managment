@@ -1,4 +1,6 @@
 <?php
+namespace App\ProductBundle\Repository;
+use App\ProductBundle\Entity\Product;
 use Doctrine\ORM\EntityManager;
 
 class ProductRespositoryDoctrineAdapter implements ProductRespositoryInterface

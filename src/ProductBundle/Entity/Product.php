@@ -1,4 +1,9 @@
 <?php
+namespace App\ProductBundle\Entity;
+
+use App\ProductBundle\DTO\CreateProductRequestDto;
+use App\ProductBundle\DTO\CreateProductResponseDto;
+
 class Product
 {
     private $id;
@@ -19,8 +24,8 @@ class Product
     public static function fromDto(CreateProductRequestDto $createProductRequestDto): Product
     {
         return new Product(
-            $createProductRequestDto->name(),
-            $createProductRequestDto->reference()
+            $createProductRequestDto->getName(),
+            $createProductRequestDto->getReference()
         );
     }
 
